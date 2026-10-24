@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAF5EC] text-charcoal-900 font-sans antialiased selection:bg-amber-600 selection:text-white;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1ebd9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c59b27;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a37b1b;
+}
+
+/* Pattern background utility */
+.arabian-pattern {
+  background-image: radial-gradient(#c59b27 0.85px, transparent 0.85px), radial-gradient(#c59b27 0.85px, transparent 0.85px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.gold-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 font-bold;
+}
+
+.gold-gradient-bg {
+  @apply bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold shadow-lg shadow-amber-700/20 transition-all duration-200;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
